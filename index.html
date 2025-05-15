@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marks Percentage Calculator</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Calculate your marks percentage easily online with this free and simple calculator." />
+  <meta name="keywords" content="marks percentage calculator, student marks calculator, online calculator, exam percentage" />
+  <meta name="author" content="Tumhara Naam" />
+
+  <!-- Social Media Tags -->
+  <meta property="og:title" content="Marks Percentage Calculator" />
+  <meta property="og:description" content="Quickly calculate your exam marks percentage using this free online tool." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tumharausername.github.io/percentage-calculator/" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    /* Read-only input styling for result */
+    input[readonly] {
+      background-color: #e9ecef;
+      border: 2px solid #28a745;
+      font-weight: bold;
+      text-align: center;
+      color: #155724;
+    }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      color: #222;
+    }
+
+    .section p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Marks Percentage Calculator</h1>
+
+  <label for="obtained">Marks Obtained:</label>
+  <input type="number" id="obtained" placeholder="Enter obtained marks" />
+
+  <label for="total">Total Marks (out of):</label>
+  <input type="number" id="total" placeholder="Enter total marks" />
+
+  <button onclick="calculatePercentage()">Calculate Percentage</button>
+
+  <input type="text" id="result" readonly placeholder="Your Percentage will appear here" />
+
+  <div class="section">
+    <h2>How to Calculate Percentage</h2>
+    <p>
+      Formula: <strong>(Marks Obtained / Total Marks) × 100</strong><br />
+      Example: If you got 45 out of 50, then (45 / 50) × 100 = <strong>90%</strong>
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>FAQs</h2>
+    <p><strong>Q: What is this calculator for?</strong><br />A: It's for calculating your exam or test percentage quickly and easily.</p>
+    <p><strong>Q: Is this free to use?</strong><br />A: Yes, it's completely free and works on mobile and desktop.</p>
+    <p><strong>Q: Can I share it with friends?</strong><br />A: Of course! Just share the link after it's live.</p>
+  </div>
+
+  <script>
+    function calculatePercentage() {
+      var obtained = parseFloat(document.getElementById("obtained").value);
+      var total = parseFloat(document.getElementById("total").value);
+
+      if (isNaN(obtained) || isNaN(total) || total <= 0) {
+        document.getElementById("result").value = "Please enter valid numbers.";
+        return;
+      }
+
+      var percentage = (obtained / total) * 100;
+      document.getElementById("result").value = "Your Percentage: " + percentage.toFixed(2) + "%";
+    }
+  </script>
+</body>
+</html>
